@@ -1,0 +1,14 @@
+.cont {
+    
+    display: flex;
+    margin-top: 80px;
+    
+    canvas {
+        border: 1px solid black;
+        margin: auto;
+    }
+
+    button {
+        width: 100px;
+    }
+}

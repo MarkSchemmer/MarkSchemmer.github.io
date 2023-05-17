@@ -1,0 +1,119 @@
+<div class="board">
+    
+    <button 
+    (click)="newDeal()"
+    class="btn btn-big btn-info new-game-btn">New Game</button>
+    
+    <div class="dealer">
+        <div 
+        (click)="handlePlayAbleDrawRowWhenEmpty()" 
+        class="reset-deck"></div>
+        <div
+        class="card" *ngFor="let obj of dealer.deck">
+                <app-card
+                class="img"
+                (click)="handlePlayAbleDrawRow()"
+                [card]="obj"
+                [pileNumber]="12">
+                </app-card>
+        </div>
+
+        <div class="playable-pile">
+                <div class="card" *ngFor="let cd of bottomRows[12]().source">
+                        <app-card 
+                        (click)="handlePlayAbleCardStack(cd)"
+                        [card]="cd" [pileNumber]="12"></app-card>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="top-row">
+        <div (click)="handleTopRowDestinationClick(8)" class="col column-8">
+            <div class="card" *ngFor="let obj of bottomRows[8]().source; let i = index">
+                <app-card [card]="obj" [pileNumber]="8"></app-card>
+            </div>
+        </div>
+        <div (click)="handleTopRowDestinationClick(9)" class="col column-9">
+            <div class="card" *ngFor="let obj of bottomRows[9]().source; let i = index">
+                <app-card [card]="obj" [pileNumber]="9"></app-card>
+            </div>
+        </div>
+        <div (click)="handleTopRowDestinationClick(10)" class="col column-10">
+            <div class="card" *ngFor="let obj of bottomRows[10]().source; let i = index">
+                <app-card [card]="obj" [pileNumber]="10"></app-card>
+            </div>
+        </div>
+        <div (click)="handleTopRowDestinationClick(11)" class="col column-11">
+            <div class="card" *ngFor="let obj of bottomRows[11]().source; let i = index">
+                <app-card [card]="obj" [pileNumber]="11"></app-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-row">
+        <div 
+        (click)="bottomRowPile(bottomRows[1]())"
+        class="bot bot-1">
+                <div class="card" *ngFor="let obj of bottomRows[1]().source; let i = index">
+                        <app-card 
+                        (click)="handleCardClick(obj, 1)"
+                        [card]="obj" [pileNumber]="1"></app-card>
+                </div>
+        </div>
+        <div 
+        (click)="bottomRowPile(bottomRows[2]())"
+        class="bot bot-2">
+            <div class="card" *ngFor="let obj of bottomRows[2]().source; let i = index">
+                <app-card 
+                (click)="handleCardClick(obj, 2)"
+                [card]="obj" [pileNumber]="2"></app-card>
+            </div>
+        </div>
+        <div 
+        (click)="bottomRowPile(bottomRows[3]())"
+        class="bot bot-3">
+            <div class="card" *ngFor="let obj of bottomRows[3]().source; let i = index">
+                <app-card 
+                (click)="handleCardClick(obj, 3)"
+                [card]="obj" [pileNumber]="3"></app-card>
+            </div>
+        </div>
+        <div 
+        (click)="bottomRowPile(bottomRows[4]())"
+        class="bot bot-4">
+            <div class="card" *ngFor="let obj of bottomRows[4]().source; let i = index">
+                <app-card 
+                (click)="handleCardClick(obj, 4)"
+                [card]="obj" [pileNumber]="4"></app-card>
+            </div>
+        </div>
+        <div 
+        (click)="bottomRowPile(bottomRows[5]())"
+        class="bot bot-5">
+            <div class="card" *ngFor="let obj of bottomRows[5]().source; let i = index">
+                <app-card 
+                (click)="handleCardClick(obj, 5)"
+                [card]="obj" [pileNumber]="5"></app-card>
+            </div>
+        </div>
+        <div 
+        (click)="bottomRowPile(bottomRows[6]())"
+        class="bot bot-6">
+            <div class="card" *ngFor="let obj of bottomRows[6]().source; let i = index">
+                <app-card 
+                (click)="handleCardClick(obj, 6)"
+                [card]="obj" [pileNumber]="6"></app-card>
+            </div>
+        </div>
+        <div 
+        (click)="bottomRowPile(bottomRows[7]())"
+        class="bot bot-7">                
+            <div class="card" *ngFor="let obj of bottomRows[7]().source; let i = index">
+                <app-card 
+                (click)="handleCardClick(obj, 7)"
+                [card]="obj" [pileNumber]="7"></app-card>
+            </div>
+        </div>
+    </div>
+</div>

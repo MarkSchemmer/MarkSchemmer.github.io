@@ -1,0 +1,66 @@
+- Errors
+
+  ---------------------------------------------------------------------------------------------
+  DONE |  - When you click on draw pile side, the card is continued to be in "isSelected" state
+      Need to work out the intended functionality of the play... 
+            - This bug is now fixed... |
+  ---------------------------------------------------------------------------------------------
+
+    - Need to fix up the css of the top row and bottom... with, will list out more options later on
+
+    ------------------------------------------------------------------------------------------
+    DONE | - Need to minimize the .card class so it is not visible on the page
+    ------------------------------------------------------------------------------------------
+
+    - Need to make board full size of page
+
+    - Board should grow with cards to overflow doesn't happen
+    
+    ------------------------------------------------------------------------------------------
+    DONE | - Need to remove console errors 
+    ------------------------------------------------------------------------------------------
+
+    ------------------------------------------------------------------------------------------
+    DONE | - Add a new deal button | 
+    ------------------------------------------------------------------------------------------
+    
+    - Should I add a undo and redo button?
+    
+    - Should I add drag functionality?
+    
+  --------------------------------------------------------------------------------------------  
+  DONE | ->  - Maybe need to move eventlistener from jquery
+                   to just an Angular event Listener(click) so that 
+                   every click is caught... 
+
+                   - later on organize clicks into different piles |
+  --------------------------------------------------------------------------------------------
+
+    - Need to cut the cards and height and width by half
+      To better fit the screen
+
+    - Cards fliker when moved... how to minimize that
+    
+    - Need to move this app to NgRx... 
+
+    --------------------------------------------------------------------------------------------  
+    DONE | - When king is selected with and children it throws error | 
+    --------------------------------------------------------------------------------------------  
+
+    - When one bottom card is selected, and you select top card of other stack, it does not select entire row...
+      I must check if next selected has children
+
+    - When group of cards is selected and you click top pile, error is thrown
+
+
+    - Need add function just for top row, on wether a card can be added or not
+      I think I have some of the logic confused on this... 
+
+      I think for these reasons I need to leave some comments about if the logic is for the
+      top row or for bottom row ect... More bugs will arise until I sort out this logic 
+      to make this code bug free finally!
+
+
+      I know what changes need to take place but for the momment I'm going to
+      leave where I am on this project and just move onto the next item to 
+      work on... 

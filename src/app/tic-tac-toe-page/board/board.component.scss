@@ -1,0 +1,38 @@
+@import "../../../_variables.scss";
+
+.button-board {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    position: absolute;
+    padding: 10px;
+
+    span {
+        font-weight: bolder;
+        margin-bottom: 5px;
+    }
+
+    button {
+        margin-bottom: 5px;
+    }
+}
+
+.board {
+    // border: $board-border;
+    height: $board-height-width;
+    width: $board-height-width;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.winner {
+    opacity: 0.6;
+    // cursor: default !important;
+}
+
+.winner:hover {
+    cursor: default !important;
+}

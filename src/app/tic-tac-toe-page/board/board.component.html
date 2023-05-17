@@ -1,0 +1,32 @@
+<div class="button-board" *ngIf="winner">
+    <span>{{ winner === "Tie Game" ? " Tie Game " : "Player " + winner + " has won the game" }}</span>
+    <button 
+    (click)="playAgain()"
+    class="btn btn-sm btn-success">Play again?</button>
+    <button 
+    (click)="slowReplay()"
+    class="btn btn-sm btn-info">Slow Replay</button>
+    <button 
+    (click)="backToMainMenu()"
+    class="btn btn-sm btn-danger">Back to main menu</button>
+</div>
+
+<div>
+    <div *ngIf="!winner">
+        Player {{ playStep % 2 === 0 ? "X" : "O"}} turn
+    </div>
+
+
+    <div class="board  {{ winner ? 'winner' : ''}}">
+        <!-- Need to generate squares... -->
+        <div *ngFor="let square of squares">
+            <app-square 
+            [handleSquareClick]="handleSquareClick"
+            [square]="square"></app-square>
+        </div>
+    </div>
+
+    <app-step-history 
+    [handleStepHistClick]="handleStepHistClick"
+    [board]="moveHistory"></app-step-history>
+</div>
