@@ -29,8 +29,8 @@ export interface GamePhases {
     ai: PlayerType;
 }
 
-export const gamePhases = (state: R<GamePhases> = genGamePhases(),
-                           action: TicTacToeAction<R<GamePhases>>): R<GamePhases> => {
+export function gamePhases(state: R<GamePhases> = genGamePhases(),
+                           action: TicTacToeAction<R<GamePhases>>): R<GamePhases> {
     switch (action.type) {
         case ticTacToeEnums.UPDATE_GAMEPHASE: {
             return action.payload;
@@ -43,8 +43,8 @@ export const gamePhases = (state: R<GamePhases> = genGamePhases(),
 
 const gameBoardStart = deepClone([ generateBoard() ]);
 
-export const squareList = (state: R<Square[][]> = gameBoardStart,
-                           action: TicTacToeAction<R<Square[][]>>): R<Square[][]> => {
+export function squareList(state: R<Square[][]> = gameBoardStart,
+                           action: TicTacToeAction<R<Square[][]>>): R<Square[][]> {
     switch (action.type) {
         case ticTacToeEnums.SET_SQUARE: {
             return action.payload;
@@ -55,7 +55,7 @@ export const squareList = (state: R<Square[][]> = gameBoardStart,
     }
 };
 
-export const playStep = (state: number = 0, action: TicTacToeAction<number>): number => {
+export function playStep(state: number = 0, action: TicTacToeAction<number>): number {
     switch (action.type) {
         case ticTacToeEnums.SET_PLAY_STEP: {
             return action.payload;
@@ -66,7 +66,7 @@ export const playStep = (state: number = 0, action: TicTacToeAction<number>): nu
     }
 };
 
-export const winner = (state: PlayerType = null, action: TicTacToeAction<PlayerType>): PlayerType => {
+export function winner(state: PlayerType = null, action: TicTacToeAction<PlayerType>): PlayerType {
     switch (action.type) {
         case ticTacToeEnums.SET_WINNER: {
             return action.payload;
@@ -80,8 +80,8 @@ export const winner = (state: PlayerType = null, action: TicTacToeAction<PlayerT
     }
 };
 
-export const moveHistory = (state: R<MoveHistory[]> = [ new MoveHistory(0, null, gameBoardStart) ],
-                            action: TicTacToeAction<R<MoveHistory[]>>): R<MoveHistory[]> => {
+export function moveHistory(state: R<MoveHistory[]> = [ new MoveHistory(0, null, gameBoardStart) ],
+                            action: TicTacToeAction<R<MoveHistory[]>>): R<MoveHistory[]> {
     switch (action.type) {
         case ticTacToeEnums.SET_MOVE_HISTORY: {
             return action.payload;
@@ -109,7 +109,9 @@ export const TicTacToeRootReducer: TicTacToePageReducer = {
 };
 
 // reducer to clear global state:
-export const clearState = reducer => (state, action) => {
+export function clearState(reducer: any){ 
+    
+    return (state, action) => {
     // this is for play again
     if (action.type === ticTacToeEnums.CLEAR_STATE) {
         const gp = state.tictactoe.gamePhases;
@@ -127,4 +129,6 @@ export const clearState = reducer => (state, action) => {
     }
 
     return reducer(state, action);
+
+}
 };
